@@ -13,7 +13,7 @@ function preload(){
   polygon_img=loadImage("polygon.png");
 }
 function setup() {
-  createCanvas(1200,500);
+  createCanvas(900,400);
   engine = Engine.create();
   world = engine.world;
   Engine.run(engine);
@@ -60,7 +60,7 @@ function setup() {
   polygon = Bodies.circle(50,200,20);
   World.add(world,polygon);
   
-  slingShot = new SlingShot(this.polygon,{x:100,y:200});
+  slingShot = new Slingshot(this.polygon,{x:100,y:200});
 
 }
 function draw() {
@@ -72,6 +72,7 @@ function draw() {
   fill("lightyellow");
   text("Drag the polygon to destroy the blocks",300,30);
   textSize(10);
+  text("Press Space to get a second Chance to Play!!",650 ,350);
   ground.display();
   stand1.display();
   stand2.display();
@@ -123,5 +124,8 @@ function mouseReleased(){
   slingShot.fly();
 }
 function keyPressed(){
-//write code for extra chance of the player
-}
+
+  if (keyCode === 32){
+      //slingShot.attach(this.polygon);
+  }
+  }
