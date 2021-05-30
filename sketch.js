@@ -60,7 +60,7 @@ function setup() {
   polygon = Bodies.circle(50,200,20);
   World.add(world,polygon);
   
-  slingShot = new SlingShot(this.polygon,{x:100,y:200});
+  slingShot = new SlingShot(this.polygon,{x:130,y:200});
 
 }
 function draw() {
@@ -72,7 +72,6 @@ function draw() {
   fill("lightyellow");
   text("Drag the polygon to destroy the blocks",300,30);
   textSize(10);
-  text("Press Space to get a second Chance to Play!!",650 ,350);
   ground.display();
   stand1.display();
   stand2.display();
@@ -124,8 +123,5 @@ function mouseReleased(){
   slingShot.fly();
 }
 function keyPressed(){
-
-  if (keyCode === 32){
-      slingShot.attach(this.polygon);
-  }
-  }
+//write code for extra chance of the player
+}
